@@ -2,21 +2,16 @@
 
 import type React from "react"
 import { useRef, useState } from "react"
+import Link from "next/link"
 import emailjs from "@emailjs/browser"
-import { Mail, MapPin, Phone, Send, Sparkles, SquareTerminal } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowLeft, Mail, Phone, Send } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/components/ui/use-toast"
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
 
@@ -38,10 +33,7 @@ export default function ContactPage() {
       )
 
       if (result.status === 200) {
-        toast({
-          title: "Message sent",
-          description: "Thanks — I will get back to you soon.",
-        })
+        toast({ title: "Message sent", description: "Thanks. I will get back to you soon." })
         setFormData({ name: "", email: "", subject: "", message: "" })
       } else {
         throw new Error("Failed to send message")
@@ -59,111 +51,78 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="relative overflow-hidden">
-      <div className="tech-grid pointer-events-none absolute inset-x-0 top-0 -z-10 h-[620px]" />
-
-      <section className="container px-4 pb-12 pt-20 text-center md:px-6 md:pb-16 md:pt-28">
-        <div className="eyebrow mb-5">
-          <Sparkles className="h-3.5 w-3.5" />
-          Start a build
-        </div>
-        <h1 className="gradient-text mx-auto max-w-4xl text-5xl font-black tracking-[-0.05em] sm:text-6xl">
-          Send the idea. It does not need to be polished yet.
+    <div className="min-h-screen bg-[#050505] text-white">
+      <section className="mx-auto max-w-[1240px] px-5 pb-12 pt-20 sm:px-8 lg:pb-16 lg:pt-28">
+        <Link href="/" className="inline-flex items-center gap-2 text-xs font-semibold text-white/45 hover:text-white">
+          <ArrowLeft className="h-4 w-4" /> Back home
+        </Link>
+        <p className="section-kicker mt-10">Contact</p>
+        <h1 className="mt-5 max-w-5xl text-5xl font-black leading-[0.95] tracking-[-0.06em] sm:text-7xl">
+          Tell me what you want to build.
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-          Tell me what you want to build, what currently exists, or what is not working. I can help turn the rough
-          brief into a clearer digital product direction.
+        <p className="mt-6 max-w-2xl text-base leading-8 text-white/48">
+          A short explanation is enough. Share the idea, the problem, or a reference website — I&apos;ll help make the next step clear.
         </p>
       </section>
 
-      <section className="container grid gap-6 px-4 pb-20 md:px-6 md:pb-28 lg:grid-cols-[1.15fr_0.85fr]">
-        <div className="glass-panel rounded-3xl p-6 sm:p-8">
-          <div className="mb-7 flex items-center gap-3 border-b border-border/60 pb-5">
-            <div className="grid h-10 w-10 place-items-center rounded-xl border border-primary/25 bg-primary/10 text-primary">
-              <SquareTerminal className="h-4 w-4" />
-            </div>
-            <div>
-              <h2 className="font-bold">Project brief</h2>
-              <p className="text-xs text-muted-foreground">A few useful details are enough to start.</p>
-            </div>
-          </div>
-
+      <section className="mx-auto grid max-w-[1240px] gap-5 px-5 pb-24 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:pb-32">
+        <div className="rounded-[1.75rem] border border-white/10 bg-[#090909] p-6 sm:p-8">
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" name="name" placeholder="Your name" value={formData.name} onChange={handleChange} required className="h-12 rounded-xl bg-background/60" />
+                <Label htmlFor="name" className="text-xs text-white/55">Name</Label>
+                <Input id="name" name="name" placeholder="Your name" value={formData.name} onChange={handleChange} required className="h-12 rounded-xl border-white/10 bg-black text-white placeholder:text-white/25" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email" placeholder="you@example.com" value={formData.email} onChange={handleChange} required className="h-12 rounded-xl bg-background/60" />
+                <Label htmlFor="email" className="text-xs text-white/55">Email</Label>
+                <Input id="email" name="email" type="email" placeholder="you@example.com" value={formData.email} onChange={handleChange} required className="h-12 rounded-xl border-white/10 bg-black text-white placeholder:text-white/25" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="subject">What are we building?</Label>
-              <Input id="subject" name="subject" placeholder="Portfolio, business website, automation, product idea..." value={formData.subject} onChange={handleChange} required className="h-12 rounded-xl bg-background/60" />
+              <Label htmlFor="subject" className="text-xs text-white/55">What do you need?</Label>
+              <Input id="subject" name="subject" placeholder="Website, app, AI automation, portfolio..." value={formData.subject} onChange={handleChange} required className="h-12 rounded-xl border-white/10 bg-black text-white placeholder:text-white/25" />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="message">Brief</Label>
-              <Textarea id="message" name="message" placeholder="What should it do? Who is it for? Do you have any reference or existing site?" rows={7} value={formData.message} onChange={handleChange} required className="rounded-xl bg-background/60" />
+              <Label htmlFor="message" className="text-xs text-white/55">Project brief</Label>
+              <Textarea id="message" name="message" placeholder="What should it do? Who is it for? Do you already have a design, website, or reference?" rows={8} value={formData.message} onChange={handleChange} required className="rounded-xl border-white/10 bg-black text-white placeholder:text-white/25" />
             </div>
 
-            <Button type="submit" className="h-12 w-full rounded-xl font-semibold" disabled={isSubmitting}>
-              {isSubmitting ? (
-                "Sending..."
-              ) : (
-                <>
-                  Send project brief
-                  <Send className="ml-2 h-4 w-4" />
-                </>
-              )}
-            </Button>
+            <button type="submit" disabled={isSubmitting} className="inline-flex h-12 w-full items-center justify-center rounded-full bg-emerald-300 px-6 text-sm font-bold text-black disabled:opacity-50">
+              {isSubmitting ? "Sending..." : "Send Project Brief"}
+              {!isSubmitting && <Send className="ml-2 h-4 w-4" />}
+            </button>
           </form>
         </div>
 
         <div className="space-y-5">
-          <div className="tech-card p-6">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Direct contact</p>
-            <div className="mt-6 space-y-5">
-              <a href="mailto:karthifreelancer7170@gmail.com" className="flex items-start gap-4">
-                <Mail className="mt-0.5 h-5 w-5 text-primary" />
-                <div>
-                  <div className="text-sm font-semibold">Email</div>
-                  <div className="mt-1 break-all text-sm text-muted-foreground">karthifreelancer7170@gmail.com</div>
-                </div>
-              </a>
-              <a href="tel:+919944754339" className="flex items-start gap-4">
-                <Phone className="mt-0.5 h-5 w-5 text-primary" />
-                <div>
-                  <div className="text-sm font-semibold">Phone</div>
-                  <div className="mt-1 text-sm text-muted-foreground">+91 99447 54339</div>
-                </div>
-              </a>
-              <div className="flex items-start gap-4">
-                <MapPin className="mt-0.5 h-5 w-5 text-primary" />
-                <div>
-                  <div className="text-sm font-semibold">Working mode</div>
-                  <div className="mt-1 text-sm text-muted-foreground">Remote collaboration available</div>
-                </div>
+          <div className="rounded-[1.75rem] border border-white/10 bg-[#090909] p-7">
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-300">Direct contact</p>
+            <a href="mailto:karthifreelancer7170@gmail.com" className="mt-7 flex items-start gap-4">
+              <Mail className="mt-0.5 h-5 w-5 text-emerald-300" />
+              <div>
+                <div className="text-sm font-semibold">Email</div>
+                <div className="mt-1 break-all text-sm text-white/40">karthifreelancer7170@gmail.com</div>
               </div>
-            </div>
+            </a>
+            <a href="tel:+919944754339" className="mt-6 flex items-start gap-4">
+              <Phone className="mt-0.5 h-5 w-5 text-emerald-300" />
+              <div>
+                <div className="text-sm font-semibold">Phone</div>
+                <div className="mt-1 text-sm text-white/40">+91 99447 54339</div>
+              </div>
+            </a>
           </div>
 
-          <div className="tech-card p-6">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Good first message</p>
-            <div className="mt-5 space-y-3 text-sm leading-7 text-muted-foreground">
-              <p>1. What are you trying to build?</p>
-              <p>2. Who needs to use it?</p>
-              <p>3. Is there an existing website, design, or reference?</p>
-              <p>4. What would make the first version successful?</p>
+          <div className="rounded-[1.75rem] border border-emerald-300/20 bg-emerald-300/[0.055] p-7">
+            <p className="text-sm font-bold">Good information to include</p>
+            <div className="mt-5 space-y-3 text-sm leading-7 text-white/45">
+              <p>• What you want to build</p>
+              <p>• Who will use it</p>
+              <p>• Any reference website or screenshot</p>
+              <p>• The most important feature for version one</p>
             </div>
-          </div>
-
-          <div className="rounded-2xl border border-primary/20 bg-primary/10 p-5 text-sm leading-7 text-muted-foreground">
-            You do not need to choose the framework, database, or AI tool before contacting me. Those decisions should
-            come after the product need is clear.
           </div>
         </div>
       </section>

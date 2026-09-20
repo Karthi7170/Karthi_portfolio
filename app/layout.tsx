@@ -2,16 +2,16 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Karthikeyan | Vibe Coder & AI Product Builder",
+  title: "Karthikeyan K | Vibe Coder, Web Developer, App Developer & AI Builder",
   description:
-    "Karthikeyan builds modern websites, product experiences, and automation systems with AI-assisted engineering, strong UX, and fast execution.",
+    "Karthikeyan K builds premium websites, app experiences, AI integrations, automations, and modern digital products with a clear user-focused approach.",
 }
 
 export default function RootLayout({
@@ -20,15 +20,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <div className="flex min-h-screen flex-col bg-[#050505]">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
+        <Toaster />
       </body>
     </html>
   )

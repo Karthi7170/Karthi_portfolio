@@ -1,145 +1,199 @@
+import Image from "next/image"
 import Link from "next/link"
 import {
   ArrowRight,
+  ArrowUpRight,
   Bot,
-  Boxes,
-  Braces,
   CheckCircle2,
   Code2,
-  ExternalLink,
-  Gauge,
-  GitBranch,
+  Github,
   Layers3,
+  Linkedin,
+  Mail,
   Rocket,
+  Smartphone,
   Sparkles,
-  SquareTerminal,
-  WandSparkles,
 } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
-const projects = [
+const services = [
   {
-    index: "01",
-    title: "Sugumar Portfolio",
-    type: "Cinematic creative portfolio",
-    description:
-      "A motion-first portfolio for a video editor, built around cinematic media, scroll-driven interactions, and a premium presentation system.",
-    stack: ["Next.js", "TypeScript", "GSAP", "Video UX"],
-    href: "https://github.com/Karthi7170/sugumar_portfolio",
+    icon: Code2,
+    title: "Web Development",
+    text: "Premium websites and web apps that are fast, responsive, easy to use, and ready to launch.",
   },
   {
-    index: "02",
-    title: "New Royal Tiles",
-    type: "Multi-showroom digital experience",
-    description:
-      "A premium tile showroom platform with room visualisation, tile calculators, branch discovery, and WhatsApp-led customer journeys.",
-    stack: ["Next.js", "Responsive UX", "Visualizer", "Local SEO"],
-    href: "https://github.com/Karthi7170/Royal-tiles",
+    icon: Smartphone,
+    title: "App Development",
+    text: "Clean mobile-first app experiences, practical prototypes, and product interfaces built around real user needs.",
   },
   {
-    index: "03",
-    title: "VIP-Hunter",
-    type: "Job discovery automation",
-    description:
-      "A focused job-matching engine that scans public employer ATS feeds, filters roles, scores relevance, and turns a noisy search into a usable daily workflow.",
-    stack: ["Next.js", "ATS Feeds", "Supabase", "Automation"],
-    href: "https://github.com/Karthi7170/vip-hunter",
-  },
-]
-
-const principles = [
-  {
-    icon: WandSparkles,
-    title: "AI as a build accelerator",
-    text: "I use AI to compress research, iteration, implementation, and debugging cycles—not to replace product judgement.",
+    icon: Bot,
+    title: "AI & Automation",
+    text: "AI integrations, assistants, smart workflows, automations, and tools that reduce repetitive work.",
   },
   {
     icon: Layers3,
-    title: "Experience before decoration",
-    text: "Every screen starts with hierarchy, user flow, mobile behaviour, and a clear action before visual polish is layered in.",
+    title: "Product & UI Build",
+    text: "From rough idea to polished interface — structure, UX, implementation, testing, and deployment in one workflow.",
+  },
+]
+
+const projects = [
+  {
+    number: "01",
+    title: "Sugumar Portfolio",
+    type: "Creative Portfolio",
+    description:
+      "A cinematic portfolio for a video editor, built around motion, video-first storytelling, and a premium viewing experience.",
+    stack: ["Next.js", "GSAP", "Video UX"],
+    href: "https://sugumar-portfolio-beta.vercel.app",
   },
   {
-    icon: Rocket,
-    title: "Ship real, then improve",
-    text: "I prefer working software, measurable feedback, and fast refinement over endless mockups that never reach users.",
+    number: "02",
+    title: "New Royal Tiles",
+    type: "Business Website",
+    description:
+      "A customer-focused digital showroom with branch discovery, tile visualisation, calculators, WhatsApp enquiry flows, and mobile-first UX.",
+    stack: ["Next.js", "Visualizer", "Local SEO"],
+    href: "https://royaltiles.vercel.app",
   },
+  {
+    number: "03",
+    title: "VIP-Hunter",
+    type: "Automation Product",
+    description:
+      "A job discovery system that scans public employer feeds, filters relevant roles, scores matches, and simplifies the daily search process.",
+    stack: ["Next.js", "Automation", "Supabase"],
+    href: "https://vip-hunter.vercel.app",
+  },
+]
+
+const process = [
+  ["01", "Understand", "We define the goal, user, and the exact problem the product should solve."],
+  ["02", "Design", "I shape the structure, visual direction, user flow, and the first working experience."],
+  ["03", "Build", "AI-assisted development speeds up implementation while the product logic stays intentional."],
+  ["04", "Ship", "I test the experience, connect the required services, deploy it, and refine what matters."],
 ]
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
-      <section className="relative isolate min-h-[86vh] border-b border-border/60">
-        <div className="tech-grid pointer-events-none absolute inset-0 -z-20" />
-        <div className="pointer-events-none absolute left-[12%] top-20 -z-10 h-64 w-64 rounded-full bg-primary/15 blur-3xl animate-pulse-glow" />
-        <div className="pointer-events-none absolute right-[8%] top-32 -z-10 h-72 w-72 rounded-full bg-violet-500/15 blur-3xl animate-pulse-glow" />
+    <div className="overflow-hidden bg-[#050505] text-white">
+      <section className="relative isolate border-b border-white/10">
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_30%,rgba(35,255,200,0.07),transparent_30%),linear-gradient(to_bottom,#080808,#050505)]" />
+        <div className="pointer-events-none absolute inset-0 -z-10 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] [background-size:46px_46px]" />
 
-        <div className="container grid min-h-[86vh] items-center gap-14 px-4 py-20 md:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:py-28">
-          <div>
-            <div className="eyebrow mb-6">
-              <Sparkles className="h-3.5 w-3.5" />
-              AI-native product builder
+        <div className="mx-auto grid min-h-[calc(100vh-72px)] max-w-[1440px] items-center gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[1.05fr_0.95fr_0.9fr] lg:gap-5 lg:px-10 lg:py-6 xl:px-16">
+          <div className="relative z-10 pt-5 lg:pt-0">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/[0.06] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+              Available for digital builds
             </div>
-
-            <h1 className="gradient-text max-w-4xl text-5xl font-black tracking-[-0.055em] sm:text-6xl lg:text-7xl xl:text-[5.4rem] xl:leading-[0.94]">
-              I turn ideas into shipped digital products.
+            <h1 className="max-w-[610px] text-[clamp(4rem,8.3vw,8.7rem)] font-black leading-[0.78] tracking-[-0.075em]">
+              <span className="block">Build</span>
+              <span className="outline-text block">Digital</span>
+              <span className="block">Futures</span>
             </h1>
-
-            <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-              I&apos;m Karthikeyan — a vibe coder who combines AI-assisted engineering, product thinking, and modern
-              frontend development to move from rough concept to polished web experience fast. I use AI for speed, but
-              I stay responsible for the architecture, integrations, UX, testing, and final result.
+            <p className="mt-7 max-w-md text-sm leading-7 text-white/50 sm:text-base">
+              I help ideas become clear, useful digital products — from the first screen to the final deployment.
             </p>
+          </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button size="lg" asChild className="h-12 rounded-xl px-6 font-semibold">
-                <Link href="/projects">
-                  Explore the builds
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="h-12 rounded-xl border-border/80 bg-background/40 px-6">
-                <Link href="/contact">Build something with me</Link>
-              </Button>
+          <div className="relative order-first mx-auto h-[460px] w-full max-w-[430px] lg:order-none lg:h-[680px] lg:max-w-none">
+            <div className="absolute inset-x-[8%] bottom-0 top-[4%] rounded-[2rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.025] to-transparent" />
+            <div className="hero-photo-mask absolute inset-0">
+              <Image
+                src="/karthikeyan-hero.webp"
+                alt="Karthikeyan K"
+                fill
+                priority
+                sizes="(max-width: 1024px) 430px, 36vw"
+                className="object-cover object-[50%_26%] grayscale"
+              />
             </div>
-
-            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-              <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Mobile-first</span>
-              <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> AI-assisted workflow</span>
-              <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Deployment-minded</span>
+            <div className="absolute bottom-5 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-white/10 bg-black/65 px-5 py-4 backdrop-blur-xl">
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                <span className="h-2 w-2 rounded-full bg-emerald-300" />
+                Karthikeyan K
+              </div>
+              <div className="mt-1 text-xs uppercase tracking-[0.18em] text-white/40">Vibe Coder · Digital Builder</div>
             </div>
           </div>
 
-          <div className="glass-panel relative rounded-3xl p-4 sm:p-6">
-            <div className="mb-5 flex items-center justify-between border-b border-border/70 pb-4">
-              <div className="flex items-center gap-2">
-                <div className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
-                <div className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
-                <div className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
-              </div>
-              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">build-system.ts</span>
+          <div className="relative z-10 pb-4 lg:pb-0">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Think. Build. Ship.</p>
+            <h2 className="max-w-md text-3xl font-black leading-[1.02] tracking-[-0.045em] sm:text-4xl xl:text-5xl">
+              Web. Apps. AI. Built around your idea.
+            </h2>
+            <p className="mt-5 max-w-md text-sm leading-7 text-white/55 sm:text-base">
+              I&apos;m <strong className="font-semibold text-white">Karthikeyan K</strong>, a vibe coder and developer.
+              I build modern websites, app experiences, AI integrations, automations, and digital products with a clear,
+              user-friendly approach.
+            </p>
+
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                href="/#contact"
+                className="inline-flex h-11 items-center justify-center rounded-full bg-emerald-300 px-5 text-sm font-bold text-black transition-transform hover:-translate-y-0.5"
+              >
+                Start a Project <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <Link
+                href="/#portfolio"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 px-5 text-sm font-semibold text-white transition-colors hover:border-emerald-300/50 hover:text-emerald-300"
+              >
+                View Work
+              </Link>
             </div>
 
-            <div className="space-y-4 rounded-2xl bg-black/25 p-5">
-              <div className="terminal-line"><span className="terminal-prompt">$</span><span>capture the idea</span></div>
-              <div className="terminal-line"><span className="terminal-prompt">$</span><span>map user flow + product logic</span></div>
-              <div className="terminal-line"><span className="terminal-prompt">$</span><span>co-build with AI + modern frameworks</span></div>
-              <div className="terminal-line"><span className="terminal-prompt">$</span><span>test responsive behaviour + edge cases</span></div>
-              <div className="terminal-line"><span className="terminal-prompt">$</span><span>deploy, observe, refine</span></div>
-              <div className="mt-6 flex items-center gap-2 rounded-xl border border-primary/20 bg-primary/10 px-4 py-3 font-mono text-xs text-primary">
-                <SquareTerminal className="h-4 w-4" />
-                status: shipping ideas into reality
-              </div>
+            <div className="mt-8 flex flex-wrap items-center gap-5 text-xs text-white/45">
+              <a href="https://github.com/Karthi7170" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white">
+                <Github className="h-4 w-4 text-emerald-300" /> GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/karthikeyan-k-950311208" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white">
+                <Linkedin className="h-4 w-4 text-emerald-300" /> LinkedIn
+              </a>
+              <a href="mailto:karthifreelancer7170@gmail.com" className="flex items-center gap-2 hover:text-white">
+                <Mail className="h-4 w-4 text-emerald-300" /> Email
+              </a>
             </div>
+          </div>
+        </div>
 
-            <div className="mt-4 grid grid-cols-3 gap-3">
-              {[
-                ["03", "flagship builds"],
-                ["AI + CODE", "workflow"],
-                ["24/7", "idea mode"],
-              ].map(([value, label]) => (
-                <div key={label} className="rounded-2xl border border-border/70 bg-card/60 p-4">
-                  <div className="font-mono text-sm font-black text-primary">{value}</div>
-                  <div className="mt-1 text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{label}</div>
+        <div className="border-t border-white/10 bg-white/[0.015]">
+          <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-x-8 gap-y-3 px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/35 sm:justify-between sm:px-8 lg:px-16">
+            <span>Web Development</span>
+            <span className="hidden h-1 w-1 rounded-full bg-emerald-300 sm:block" />
+            <span>App Development</span>
+            <span className="hidden h-1 w-1 rounded-full bg-emerald-300 sm:block" />
+            <span>AI & Automation</span>
+            <span className="hidden h-1 w-1 rounded-full bg-emerald-300 sm:block" />
+            <span>Product Experience</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="mx-auto max-w-[1240px] scroll-mt-24 px-5 py-20 sm:px-8 lg:py-28">
+        <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <div>
+            <p className="section-kicker">About me</p>
+            <h2 className="mt-5 text-4xl font-black leading-[0.98] tracking-[-0.05em] sm:text-5xl lg:text-6xl">
+              I make technology feel simpler.
+            </h2>
+          </div>
+          <div className="max-w-3xl">
+            <p className="text-xl leading-9 text-white/75 sm:text-2xl sm:leading-10">
+              I&apos;m Karthikeyan K. I use AI-assisted development, modern web technologies, and practical product
+              thinking to turn rough ideas into polished digital experiences.
+            </p>
+            <p className="mt-6 max-w-2xl text-sm leading-7 text-white/45 sm:text-base">
+              My focus is not adding technology just because it looks impressive. The product should be easy to
+              understand, responsive on every device, useful to the people using it, and straightforward to maintain.
+            </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              {["Clear communication", "Mobile-first thinking", "Launch-ready delivery"].map((item) => (
+                <div key={item} className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-xs font-medium text-white/60">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-300" />
+                  {item}
                 </div>
               ))}
             </div>
@@ -147,121 +201,133 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container px-4 py-20 md:px-6 md:py-28">
-        <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-          <div>
-            <div className="eyebrow mb-4">Selected systems</div>
-            <h2 className="max-w-2xl text-3xl font-black tracking-[-0.04em] sm:text-5xl">
-              Three builds. Three different problems solved.
-            </h2>
+      <section id="services" className="scroll-mt-24 border-y border-white/10 bg-[#080808]">
+        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:py-28">
+          <div className="mb-12 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="section-kicker">What I can help with</p>
+              <h2 className="mt-5 max-w-3xl text-4xl font-black tracking-[-0.05em] sm:text-5xl">
+                One partner for the digital side of your idea.
+              </h2>
+            </div>
+            <p className="max-w-md text-sm leading-7 text-white/45">
+              Need a website, an app experience, an AI workflow, or help shaping the full product? I can take it from
+              concept to a working first version.
+            </p>
           </div>
-          <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
-            View project details <ArrowRight className="h-4 w-4" />
-          </Link>
+
+          <div className="grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-2">
+            {services.map((service) => {
+              const Icon = service.icon
+              return (
+                <article key={service.title} className="group bg-[#090909] p-7 transition-colors hover:bg-[#0d0d0d] sm:p-9">
+                  <div className="flex items-start justify-between gap-6">
+                    <div className="grid h-11 w-11 place-items-center rounded-full border border-emerald-300/25 text-emerald-300">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <ArrowUpRight className="h-5 w-5 text-white/20 transition-colors group-hover:text-emerald-300" />
+                  </div>
+                  <h3 className="mt-10 text-2xl font-bold tracking-[-0.03em]">{service.title}</h3>
+                  <p className="mt-4 max-w-md text-sm leading-7 text-white/45">{service.text}</p>
+                </article>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" className="mx-auto max-w-[1240px] scroll-mt-24 px-5 py-20 sm:px-8 lg:py-28">
+        <div className="mb-12">
+          <p className="section-kicker">Selected work</p>
+          <div className="mt-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <h2 className="max-w-3xl text-4xl font-black tracking-[-0.05em] sm:text-5xl">Real builds. Live products.</h2>
+            <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-300">
+              View project details <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="space-y-4">
           {projects.map((project) => (
-            <article key={project.title} className="tech-card flex min-h-[430px] flex-col p-6">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-bold tracking-[0.2em] text-primary">{project.index}</span>
-                <ExternalLink className="h-4 w-4 text-muted-foreground" />
-              </div>
-              <div className="mt-12">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{project.type}</p>
-                <h3 className="mt-3 text-2xl font-black tracking-tight">{project.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-muted-foreground">{project.description}</p>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.stack.map((item) => (
-                  <span key={item} className="rounded-full border border-border bg-background/60 px-3 py-1 text-[11px] font-medium text-muted-foreground">
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-auto pt-8">
-                <Link href={project.href} className="inline-flex items-center gap-2 text-sm font-semibold hover:text-primary">
-                  Open repository <GitBranch className="h-4 w-4" />
-                </Link>
+            <article key={project.title} className="premium-project group">
+              <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[0.18fr_0.85fr_1.2fr_0.5fr] lg:items-center lg:p-10">
+                <span className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-300">{project.number}</span>
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/35">{project.type}</p>
+                  <h3 className="mt-2 text-2xl font-black tracking-[-0.035em] sm:text-3xl">{project.title}</h3>
+                </div>
+                <div>
+                  <p className="max-w-xl text-sm leading-7 text-white/48">{project.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.stack.map((item) => (
+                      <span key={item} className="rounded-full border border-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-white/35">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="lg:text-right">
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 px-5 text-sm font-semibold transition-colors hover:border-emerald-300/50 hover:text-emerald-300"
+                  >
+                    View Live <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="border-y border-border/60 bg-card/30">
-        <div className="container px-4 py-20 md:px-6 md:py-28">
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      <section className="border-y border-white/10 bg-[#080808]">
+        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:py-28">
+          <div className="mb-12 grid gap-6 lg:grid-cols-2">
             <div>
-              <div className="eyebrow mb-4">My operating system</div>
-              <h2 className="text-3xl font-black tracking-[-0.04em] sm:text-5xl">
-                Vibe coding, with engineering discipline.
-              </h2>
-              <p className="mt-5 max-w-xl leading-8 text-muted-foreground">
-                The goal is not to type less code. The goal is to remove low-value friction so more attention can go to
-                the product: what users need, what the interface should communicate, and what has to work reliably.
-              </p>
+              <p className="section-kicker">How I work</p>
+              <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] sm:text-5xl">Simple process. Clear progress.</h2>
             </div>
+            <p className="max-w-xl self-end text-sm leading-7 text-white/45">
+              You do not need a perfect technical brief. Start with the problem or idea — I&apos;ll help turn it into a
+              clear, buildable plan.
+            </p>
+          </div>
 
-            <div className="grid gap-4">
-              {principles.map((item) => (
-                <div key={item.title} className="tech-card grid gap-4 p-6 sm:grid-cols-[48px_1fr]">
-                  <div className="grid h-12 w-12 place-items-center rounded-2xl border border-primary/25 bg-primary/10 text-primary">
-                    <item.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="grid gap-4 lg:grid-cols-4">
+            {process.map(([number, title, text]) => (
+              <div key={number} className="rounded-2xl border border-white/10 bg-black p-6">
+                <span className="font-mono text-xs font-bold text-emerald-300">{number}</span>
+                <h3 className="mt-8 text-xl font-bold">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-white/42">{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="container px-4 py-20 md:px-6 md:py-28">
-        <div className="glass-panel relative overflow-hidden rounded-3xl p-7 sm:p-10 lg:p-14">
-          <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-            <div>
-              <div className="eyebrow mb-4">Build stack</div>
-              <h2 className="max-w-3xl text-3xl font-black tracking-[-0.04em] sm:text-5xl">
-                From idea to interface, logic, automation, and deployment.
-              </h2>
-              <p className="mt-5 max-w-2xl leading-8 text-muted-foreground">
-                I work best on modern websites, product prototypes, business experiences, and focused automation where
-                speed matters but the result still needs to feel intentional.
-              </p>
+      <section id="contact" className="scroll-mt-24">
+        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:py-28">
+          <div className="relative overflow-hidden rounded-[2rem] border border-emerald-300/20 bg-[radial-gradient(circle_at_85%_20%,rgba(46,255,203,0.14),transparent_28%),#090909] p-7 sm:p-10 lg:p-14">
+            <Sparkles className="absolute right-8 top-8 h-6 w-6 text-emerald-300/60" />
+            <p className="section-kicker">Have an idea?</p>
+            <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.5fr] lg:items-end">
+              <div>
+                <h2 className="max-w-4xl text-4xl font-black leading-[0.98] tracking-[-0.055em] sm:text-6xl">
+                  Let&apos;s turn it into something people can use.
+                </h2>
+                <p className="mt-5 max-w-xl text-sm leading-7 text-white/48 sm:text-base">
+                  Website, app, AI workflow, automation, or a product idea — send me the requirement and we can shape the
+                  right solution.
+                </p>
+              </div>
+              <div className="lg:text-right">
+                <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-full bg-emerald-300 px-6 text-sm font-bold text-black">
+                  Start a Project <Rocket className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
             </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                [Code2, "Frontend systems"],
-                [Bot, "AI workflows"],
-                [Boxes, "Product integrations"],
-                [Gauge, "Performance UX"],
-                [Braces, "Logic + APIs"],
-                [GitBranch, "Git + deployment"],
-              ].map(([Icon, label]) => {
-                const ItemIcon = Icon as typeof Code2
-                return (
-                  <div key={label as string} className="flex items-center gap-3 rounded-2xl border border-border/70 bg-background/50 p-4">
-                    <ItemIcon className="h-4 w-4 text-primary" />
-                    <span className="text-xs font-semibold">{label as string}</span>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-
-          <div className="mt-10">
-            <Button size="lg" asChild className="h-12 rounded-xl px-6">
-              <Link href="/contact">
-                Start a build
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
           </div>
         </div>
       </section>

@@ -1,160 +1,117 @@
 import Link from "next/link"
-import {
-  ArrowUpRight,
-  BriefcaseBusiness,
-  Film,
-  Github,
-  MapPinned,
-  ScanLine,
-  Sparkles,
-  Target,
-  WandSparkles,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowLeft, ArrowUpRight, BriefcaseBusiness, Film, MapPinned } from "lucide-react"
 
 const projects = [
   {
     number: "01",
     title: "Sugumar Portfolio",
-    category: "Creative portfolio / Video editor",
+    category: "Creative Portfolio",
     icon: Film,
-    repo: "https://github.com/Karthi7170/sugumar_portfolio",
+    live: "https://sugumar-portfolio-beta.vercel.app",
     summary:
-      "A cinematic portfolio engineered around motion, media, and personality. The experience uses scroll-led interactions and video-first presentation to make the editor's work feel like the interface itself.",
+      "A cinematic portfolio for a video editor, designed to make the work feel immersive instead of presenting it as a standard gallery.",
     challenge:
-      "Present a video editor's identity without falling back to a static grid of thumbnails and generic portfolio sections.",
-    outcome:
-      "A responsive, motion-rich portfolio with a cinematic hero, curated work presentation, and interaction patterns designed around viewing creative work.",
-    highlights: [
-      "GSAP-powered scroll interactions",
-      "Video-first project presentation",
-      "Responsive cinematic layout",
-      "Portfolio storytelling and hierarchy",
-    ],
-    stack: ["Next.js", "React", "TypeScript", "GSAP", "Responsive Media"],
+      "Create a premium creative identity with motion, video-first presentation, and an experience that still works smoothly on smaller screens.",
+    result:
+      "A polished portfolio with cinematic storytelling, responsive layout, scroll-led interaction, and a strong visual identity.",
+    highlights: ["Cinematic hero", "GSAP interactions", "Responsive video UX", "Premium creative presentation"],
+    stack: ["Next.js", "React", "TypeScript", "GSAP"],
   },
   {
     number: "02",
     title: "New Royal Tiles",
-    category: "Retail / Multi-showroom experience",
+    category: "Business Website",
     icon: MapPinned,
-    repo: "https://github.com/Karthi7170/Royal-tiles",
+    live: "https://royaltiles.vercel.app",
     summary:
-      "A premium mobile-first website for a real tile business, designed to connect four showrooms with product discovery, visualisation, calculators, directions, and WhatsApp conversion flows.",
+      "A customer-friendly website for a multi-branch tile showroom, built to make discovery, visualisation, enquiry, and showroom visits easier.",
     challenge:
-      "Turn an offline showroom business into a useful digital buying journey instead of building a brochure-style website.",
-    outcome:
-      "A richer customer experience that helps visitors explore rooms, preview tile direction, calculate quantity, find the right branch, and move directly into enquiry.",
-    highlights: [
-      "Browser-based room visualiser",
-      "Tile area and wastage calculator",
-      "Four-branch finder and local SEO structure",
-      "Branch-aware WhatsApp lead journey",
-    ],
-    stack: ["Next.js", "Mobile-first UX", "Visualizer", "Local SEO", "Conversion UX"],
+      "Turn an offline showroom business into a useful digital buying journey rather than a basic brochure website.",
+    result:
+      "A mobile-first experience with room visualisation, tile calculations, branch discovery, local search structure, and WhatsApp-led conversion.",
+    highlights: ["Room visualiser", "Tile calculator", "Four branch finder", "WhatsApp enquiry journey"],
+    stack: ["Next.js", "Responsive UX", "Local SEO", "Visualizer"],
   },
   {
     number: "03",
     title: "VIP-Hunter",
-    category: "Automation / Job discovery",
+    category: "Automation Product",
     icon: BriefcaseBusiness,
-    repo: "https://github.com/Karthi7170/vip-hunter",
+    live: "https://vip-hunter.vercel.app",
     summary:
-      "A focused job-matching engine built to reduce repetitive search work. It scans public employer ATS feeds, filters by candidate rules, removes obvious mismatches, and scores relevant openings locally.",
+      "A focused job discovery tool that reduces repetitive searching by filtering public employer feeds around role, location, and experience preferences.",
     challenge:
-      "Make daily job discovery useful without depending on expensive AI calls or fabricating vacancies when a source has no matching jobs.",
-    outcome:
-      "A repeatable job-search workflow with role and location filtering, relevance scoring, deduplication, daily scheduling, and optional notification integrations.",
-    highlights: [
-      "Public Lever and SmartRecruiters feed scanning",
-      "Local relevance scoring and filtering",
-      "Supabase-ready persistence workflow",
-      "Scheduled daily search architecture",
-    ],
-    stack: ["Next.js", "TypeScript", "Supabase", "ATS Feeds", "Automation"],
+      "Make daily job discovery faster and more relevant without inventing vacancies or depending on expensive AI calls.",
+    result:
+      "A repeatable search workflow with ATS feed scanning, filtering, local scoring, deduplication, and scheduled automation.",
+    highlights: ["ATS feed scanning", "Local match scoring", "Supabase-ready workflow", "Scheduled search"],
+    stack: ["Next.js", "TypeScript", "Automation", "Supabase"],
   },
 ]
 
 export default function ProjectsPage() {
   return (
-    <div className="relative overflow-hidden">
-      <div className="tech-grid pointer-events-none absolute inset-x-0 top-0 -z-10 h-[680px]" />
-
-      <section className="container px-4 pb-14 pt-20 text-center md:px-6 md:pb-20 md:pt-28">
-        <div className="eyebrow mb-5">
-          <Sparkles className="h-3.5 w-3.5" />
-          Selected builds
-        </div>
-        <h1 className="gradient-text mx-auto max-w-4xl text-5xl font-black tracking-[-0.05em] sm:text-6xl">
-          Real projects, built around real product problems.
+    <div className="min-h-screen bg-[#050505] text-white">
+      <section className="mx-auto max-w-[1240px] px-5 pb-12 pt-20 sm:px-8 lg:pb-16 lg:pt-28">
+        <Link href="/" className="inline-flex items-center gap-2 text-xs font-semibold text-white/45 hover:text-white">
+          <ArrowLeft className="h-4 w-4" /> Back home
+        </Link>
+        <p className="section-kicker mt-10">Portfolio</p>
+        <h1 className="mt-5 max-w-5xl text-5xl font-black leading-[0.95] tracking-[-0.06em] sm:text-7xl">
+          Real projects with a clear job to do.
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-          I&apos;m more interested in systems that solve a clear problem than in filling a portfolio with demo cards.
-          These are the three projects that best represent how I currently build.
+        <p className="mt-6 max-w-2xl text-base leading-8 text-white/48">
+          These projects show how I approach different problems — creative presentation, business conversion, and workflow automation.
         </p>
       </section>
 
-      <section className="container space-y-6 px-4 pb-20 md:px-6 md:pb-28">
+      <section className="mx-auto max-w-[1240px] space-y-5 px-5 pb-24 sm:px-8 lg:pb-32">
         {projects.map((project) => {
           const Icon = project.icon
           return (
-            <article key={project.title} className="tech-card p-6 sm:p-8 lg:p-10">
-              <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+            <article key={project.title} className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#090909]">
+              <div className="grid gap-10 p-7 sm:p-10 lg:grid-cols-[0.82fr_1.18fr] lg:p-12">
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-black tracking-[0.22em] text-primary">{project.number}</span>
-                    <div className="grid h-11 w-11 place-items-center rounded-2xl border border-primary/25 bg-primary/10 text-primary">
+                    <span className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-300">{project.number}</span>
+                    <div className="grid h-11 w-11 place-items-center rounded-full border border-emerald-300/25 text-emerald-300">
                       <Icon className="h-5 w-5" />
                     </div>
                   </div>
-
-                  <p className="mt-12 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                    {project.category}
-                  </p>
-                  <h2 className="mt-3 text-3xl font-black tracking-[-0.035em] sm:text-4xl">{project.title}</h2>
-                  <p className="mt-5 max-w-xl text-sm leading-7 text-muted-foreground">{project.summary}</p>
-
+                  <p className="mt-12 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/35">{project.category}</p>
+                  <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] sm:text-4xl">{project.title}</h2>
+                  <p className="mt-5 max-w-xl text-sm leading-7 text-white/48">{project.summary}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {project.stack.map((item) => (
-                      <span key={item} className="rounded-full border border-border bg-background/60 px-3 py-1 text-[11px] font-medium text-muted-foreground">
+                      <span key={item} className="rounded-full border border-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-white/35">
                         {item}
                       </span>
                     ))}
                   </div>
-
-                  <Button asChild variant="outline" className="mt-8 rounded-xl border-border/80 bg-background/50">
-                    <Link href={project.repo}>
-                      <Github className="mr-2 h-4 w-4" />
-                      View repository
-                      <ArrowUpRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-8 inline-flex h-11 items-center rounded-full bg-emerald-300 px-5 text-sm font-bold text-black"
+                  >
+                    View Live Project <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </a>
                 </div>
 
-                <div className="grid gap-4">
-                  <div className="rounded-2xl border border-border/70 bg-background/45 p-5">
-                    <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-primary">
-                      <Target className="h-4 w-4" /> Product challenge
-                    </div>
-                    <p className="text-sm leading-7 text-muted-foreground">{project.challenge}</p>
+                <div className="grid gap-3">
+                  <div className="rounded-2xl border border-white/10 bg-black p-6">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-300">Challenge</p>
+                    <p className="mt-3 text-sm leading-7 text-white/50">{project.challenge}</p>
                   </div>
-
-                  <div className="rounded-2xl border border-border/70 bg-background/45 p-5">
-                    <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-primary">
-                      <WandSparkles className="h-4 w-4" /> Build outcome
-                    </div>
-                    <p className="text-sm leading-7 text-muted-foreground">{project.outcome}</p>
+                  <div className="rounded-2xl border border-white/10 bg-black p-6">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-300">Result</p>
+                    <p className="mt-3 text-sm leading-7 text-white/50">{project.result}</p>
                   </div>
-
-                  <div className="rounded-2xl border border-border/70 bg-background/45 p-5">
-                    <div className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-primary">
-                      <ScanLine className="h-4 w-4" /> Key systems
-                    </div>
-                    <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-2xl border border-white/10 bg-black p-6">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-300">Highlights</p>
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
                       {project.highlights.map((item) => (
-                        <div key={item} className="rounded-xl border border-border/60 bg-card/60 px-4 py-3 text-xs font-medium">
-                          {item}
-                        </div>
+                        <div key={item} className="rounded-xl border border-white/10 px-4 py-3 text-xs font-medium text-white/55">{item}</div>
                       ))}
                     </div>
                   </div>
@@ -165,15 +122,15 @@ export default function ProjectsPage() {
         })}
       </section>
 
-      <section className="border-t border-border/60 bg-card/30">
-        <div className="container px-4 py-16 text-center md:px-6 md:py-20">
-          <h2 className="text-3xl font-black tracking-[-0.04em]">Have a rough idea, not a finished brief?</h2>
-          <p className="mx-auto mt-4 max-w-xl leading-7 text-muted-foreground">
-            That is enough to start. I can help turn the idea into a clearer product flow and a buildable first version.
+      <section className="border-t border-white/10 bg-[#080808]">
+        <div className="mx-auto max-w-[1240px] px-5 py-16 text-center sm:px-8 lg:py-20">
+          <h2 className="text-3xl font-black tracking-[-0.04em] sm:text-4xl">Have a project in mind?</h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/45">
+            Share the idea, reference, or problem. You do not need to prepare a technical document first.
           </p>
-          <Button size="lg" asChild className="mt-7 rounded-xl">
-            <Link href="/contact">Start the conversation</Link>
-          </Button>
+          <Link href="/contact" className="mt-7 inline-flex h-11 items-center rounded-full bg-emerald-300 px-5 text-sm font-bold text-black">
+            Start a Project
+          </Link>
         </div>
       </section>
     </div>

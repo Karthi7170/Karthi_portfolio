@@ -1,51 +1,50 @@
 import Link from "next/link"
-import { Github, Linkedin, Mail, Sparkles } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border/70 bg-card/30">
-      <div className="container px-4 py-10 md:px-6 md:py-14">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_0.8fr_0.8fr]">
-          <div className="max-w-md">
-            <div className="mb-4 flex items-center gap-2 font-mono text-sm font-black">
-              <Sparkles className="h-4 w-4 text-primary" />
-              KARTHI//LABS
+    <footer className="border-t border-white/10 bg-[#050505] text-white">
+      <div className="mx-auto max-w-[1240px] px-5 py-12 sm:px-8">
+        <div className="grid gap-10 md:grid-cols-[1.25fr_0.75fr_0.75fr]">
+          <div className="max-w-lg">
+            <div className="text-lg font-black tracking-[-0.03em]">
+              Karthikeyan <span className="text-emerald-300">K.</span>
             </div>
-            <p className="text-sm leading-7 text-muted-foreground">
-              AI-native product building for websites, interactive experiences, and automation systems. Fast execution,
-              clear UX, and technology that earns its place in the product.
+            <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/35">Vibe Coder · Developer · AI Builder</div>
+            <p className="mt-5 max-w-md text-sm leading-7 text-white/40">
+              I build clear, modern digital products across web development, app experiences, AI integrations, and automation.
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-foreground">Navigate</h3>
-            <div className="grid gap-3 text-sm text-muted-foreground">
-              <Link href="/" className="hover:text-primary">Home</Link>
-              <Link href="/projects" className="hover:text-primary">Projects</Link>
-              <Link href="/services" className="hover:text-primary">Capabilities</Link>
-              <Link href="/contact" className="hover:text-primary">Contact</Link>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/35">Navigate</p>
+            <div className="mt-4 grid gap-3 text-sm text-white/55">
+              <Link href="/#about" className="hover:text-white">About Me</Link>
+              <Link href="/#services" className="hover:text-white">Services</Link>
+              <Link href="/#portfolio" className="hover:text-white">Portfolio</Link>
+              <Link href="/contact" className="hover:text-white">Contact</Link>
             </div>
           </div>
 
           <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-foreground">Connect</h3>
-            <div className="flex gap-3">
-              <Link href="https://github.com/Karthi7170" aria-label="GitHub" className="rounded-xl border border-border bg-background/50 p-2.5 text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary">
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/35">Connect</p>
+            <div className="mt-4 flex gap-3">
+              <a href="https://github.com/Karthi7170" target="_blank" rel="noreferrer" aria-label="GitHub" className="social-button">
                 <Github className="h-4 w-4" />
-              </Link>
-              <Link href="https://www.linkedin.com/in/karthikeyan-k-950311208" aria-label="LinkedIn" className="rounded-xl border border-border bg-background/50 p-2.5 text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary">
+              </a>
+              <a href="https://www.linkedin.com/in/karthikeyan-k-950311208" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="social-button">
                 <Linkedin className="h-4 w-4" />
-              </Link>
-              <Link href="mailto:karthifreelancer7170@gmail.com" aria-label="Email" className="rounded-xl border border-border bg-background/50 p-2.5 text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary">
+              </a>
+              <a href="mailto:karthifreelancer7170@gmail.com" aria-label="Email" className="social-button">
                 <Mail className="h-4 w-4" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-border/60 pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Karthikeyan. Built with intent, AI, and code.</p>
-          <p className="font-mono">idea → system → ship</p>
+        <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-[11px] text-white/30 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Karthikeyan K. All rights reserved.</p>
+          <p>Built with AI-assisted development and product thinking.</p>
         </div>
       </div>
     </footer>
