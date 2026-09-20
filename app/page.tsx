@@ -102,12 +102,12 @@ export default function Home() {
             <div className="absolute inset-x-[8%] bottom-0 top-[4%] rounded-[2rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.025] to-transparent" />
             <div className="hero-photo-mask absolute inset-0">
               <Image
-                src="/karthikeyan-hero.webp"
+                src="/karthikeyan-hero.jpg"
                 alt="Karthikeyan K"
                 fill
                 priority
                 sizes="(max-width: 1024px) 430px, 36vw"
-                className="object-cover object-[50%_26%] grayscale"
+                className="object-cover object-[50%_22%]"
               />
             </div>
             <div className="absolute bottom-5 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-white/10 bg-black/65 px-5 py-4 backdrop-blur-xl">
