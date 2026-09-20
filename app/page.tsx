@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import {
   ArrowRight,
@@ -101,13 +100,12 @@ export default function Home() {
           <div className="relative order-first mx-auto h-[460px] w-full max-w-[430px] lg:order-none lg:h-[680px] lg:max-w-none">
             <div className="absolute inset-x-[8%] bottom-0 top-[4%] rounded-[2rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.025] to-transparent" />
             <div className="hero-photo-mask absolute inset-0">
-              <Image
-                src="/karthikeyan-hero.jpg"
+              <img
+                src="https://raw.githubusercontent.com/Karthi7170/karthikeyan_portfolio/main/public/images/profile.png"
                 alt="Karthikeyan K"
-                fill
-                priority
-                sizes="(max-width: 1024px) 430px, 36vw"
-                className="object-cover object-[50%_22%]"
+                loading="eager"
+                decoding="async"
+                className="h-full w-full object-cover object-[50%_22%]"
               />
             </div>
             <div className="absolute bottom-5 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-white/10 bg-black/65 px-5 py-4 backdrop-blur-xl">
