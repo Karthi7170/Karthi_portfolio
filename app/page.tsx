@@ -1,132 +1,158 @@
 import Link from "next/link"
-import { ArrowDownRight, ArrowUpRight, Github, Instagram, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Github, Instagram, Linkedin, Mail, MonitorSmartphone, Smartphone, Sparkles, WandSparkles } from "lucide-react"
 
 const services = [
-  { no: "01", title: "AI FULL STACK DEVELOPMENT", bullets: ["Next.js", "React", "Node.js", "REST APIs", "Databases"], text: "End-to-end web products with AI-assisted development, scalable architecture, responsive interfaces, APIs and deployment." },
-  { no: "02", title: "FRONTEND DEVELOPMENT", bullets: ["React", "Next.js", "Tailwind CSS", "UI Systems", "Responsive Design"], text: "Modern, accessible interfaces with strong visual hierarchy, smooth interactions, performance and mobile responsiveness." },
-  { no: "03", title: "BACKEND & API DEVELOPMENT", bullets: ["Node.js", "APIs", "SQL", "Auth", "Integrations"], text: "Practical backend systems and integrations for data, authentication, business workflows and connected applications." },
-  { no: "04", title: "AI & AUTOMATION", bullets: ["OpenAI", "AI Agents", "Prompt Engineering", "Automation", "Workflow Tools"], text: "AI integrations and automations that reduce repetitive work, improve workflows and add intelligent product capabilities." },
-  { no: "05", title: "MOBILE DEVELOPMENT", bullets: ["Mobile UI", "PWA", "Responsive Apps", "Product UX", "Prototyping"], text: "Mobile-first product experiences, web apps and prototypes designed around simple flows and clear user actions." },
-  { no: "06", title: "DEVOPS & TOOLS", bullets: ["Git & GitHub", "Vercel", "CI/CD", "VS Code", "Deployment"], text: "Reliable development workflows with source control, deployment, testing and modern AI-assisted developer tools." },
+  { icon: MonitorSmartphone, title: "Web Development", text: "Modern, responsive, high-performance websites" },
+  { icon: Smartphone, title: "App Development", text: "Cross-platform applications" },
+  { icon: Sparkles, title: "AI Solutions", text: "Integrations, automations and smart tools" },
+  { icon: WandSparkles, title: "UI/UX Design", text: "Clean and user-friendly experiences" },
 ]
 
-const projects = [
-  { no: "01", title: "NEW ROYAL TILES", kind: "BUSINESS WEBSITE", tone: "tiles", href: "/projects" },
-  { no: "02", title: "SUGUMAR PORTFOLIO", kind: "CREATIVE PORTFOLIO", tone: "film", href: "/projects" },
-  { no: "03", title: "VIP-HUNTER", kind: "JOB AUTOMATION", tone: "jobs", href: "/projects" },
-  { no: "04", title: "KARTHI PORTFOLIO", kind: "PERSONAL WEBSITE", tone: "portfolio", href: "/projects" },
+const works = [
+  { title: "New Royal Tiles", subtitle: "Showroom Website", tag: "Web", href: "https://royaltiles.vercel.app", cls: "royal" },
+  { title: "Sugumar", subtitle: "Portfolio Website", tag: "Web", href: "https://sugumar-portfolio-beta.vercel.app", cls: "sugumar" },
+  { title: "VIP-Hunter", subtitle: "AI Job Platform", tag: "AI", href: "https://vip-hunter.vercel.app", cls: "hunter" },
 ]
 
 export default function Home() {
   return (
-    <div className="ref-site bg-black text-white">
-      <section className="ref-hero" id="home">
-        <div className="ref-shell">
-          <div className="ref-hero-stage">
-            <div className="ref-portfolio-word" aria-hidden="true">PORTFOLIO</div>
-            <div className="ref-hero-person"><img src="/karthikeyan-night.webp" alt="Karthikeyan K" /></div>
-            <div className="ref-role"><strong>Vibe Coder</strong><span>Developer</span></div>
-            <Link href="#contact" className="ref-contact-pill">Contact</Link>
-            <div className="ref-scroll-dot"><span>SCROLL</span><i /></div>
-          </div>
-        </div>
-      </section>
+    <div className="shot-page">
+      <section className="shot-hero" id="home">
+        <div className="shot-hero-glow" />
+        <div className="shot-hero-inner">
+          <div className="shot-left">
+            <div className="shot-kicker"><span /> VIBE CODER</div>
 
-      <section className="ref-intro" id="about">
-        <div className="ref-shell">
-          <div className="ref-intro-grid">
-            <div className="ref-intro-photo"><img src="/karthikeyan-editorial.webp" alt="Karthikeyan K" /></div>
-            <div className="ref-intro-copy">
-              <h2 className="ref-metal-title">Intro</h2>
-              <div className="ref-copy-card">
-                <p>Hey, I&apos;m <strong>Karthikeyan K.</strong> I&apos;m a vibe coder and developer who loves turning ideas into modern websites, app experiences and useful AI-powered products. I combine rapid AI-assisted development with practical product thinking, clean interfaces and real deployment.</p>
-                <p className="mt-4">I work across web development, app experiences, AI integrations, automation, testing and deployment.</p>
-              </div>
+            <h1 className="shot-title">
+              <span>PORT</span>
+              <span>FOLIO<i /></span>
+            </h1>
+
+            <div className="shot-flow">
+              <span>Ideas</span><b>→</b><span>Design</span><b>→</b><span>Develop</span><b>→</b><span>Real Products</span>
+            </div>
+
+            <div className="shot-actions">
+              <Link href="#work" className="shot-primary">View My Work <ArrowRight /></Link>
+              <Link href="#contact" className="shot-secondary">Let&apos;s Talk</Link>
             </div>
           </div>
-          <div className="ref-tech-marquee">
-            {["JavaScript","TypeScript","Tailwind CSS","React.js","Next.js","Node.js","REST APIs","SQL","Git","GitHub","Vercel","AI","Automation","Testing","Figma"].map((item) => <span key={item}>{item}</span>)}
+
+          <div className="shot-center">
+            <div className="shot-person">
+              <img src="/karthikeyan-night.webp" alt="Karthikeyan K" />
+            </div>
+
+            <div className="shot-signature">
+              <strong>Karthikeyan K.</strong>
+              <span>DEVELOPER</span>
+              <span>CREATIVE THINKER</span>
+              <span>PROBLEM SOLVER</span>
+            </div>
+          </div>
+
+          <aside className="shot-right">
+            <div className="shot-side-line"><i /></div>
+            <div className="shot-based">
+              <span>BASED IN</span>
+              <strong>CHENNAI, INDIA</strong>
+            </div>
+
+            <h2>
+              I BUILD<br />
+              MODERN<br />
+              <em>WEBSITES,</em><br />
+              <em>APPS & AI</em><br />
+              SOLUTIONS.
+            </h2>
+
+            <p>Turning ideas into powerful digital experiences with clean design and real functionality.</p>
+
+            <div className="shot-scroll">
+              <span>SCROLL DOWN</span>
+              <b />
+              <i />
+            </div>
+          </aside>
+
+          <div className="shot-stats">
+            <div><strong>3+</strong><span>Projects Completed</span></div>
+            <div><strong>Happy</strong><span>Clients</span></div>
+            <div><strong>Web / App / AI</strong><span>Focus Areas</span></div>
+            <div><strong>Always</strong><span>Learning</span></div>
           </div>
         </div>
       </section>
 
-      <section className="ref-services" id="services">
-        <div className="ref-shell">
-          <div className="ref-services-head"><h2 className="ref-metal-title ref-what-title">WHAT WE<br/>CAN DO</h2></div>
-          <div className="ref-service-list">
-            {services.map((service) => (
-              <details key={service.no} className="ref-service-row">
-                <summary>
-                  <span className="ref-service-no">{service.no}</span>
-                  <span className="ref-service-title">{service.title}</span>
-                  <ArrowDownRight className="ref-service-arrow" />
-                </summary>
-                <div className="ref-service-open">
-                  <div className="ref-service-bullets">{service.bullets.map((bullet) => <span key={bullet}>▪ {bullet}</span>)}</div>
-                  <p>{service.text}</p>
-                </div>
-              </details>
-            ))}
+      <section className="shot-dashboard" id="about">
+        <div className="shot-dashboard-inner">
+          <div className="shot-about">
+            <div className="shot-section-label"><i /> ABOUT ME</div>
+            <h3>More than<br />just a <em>developer.</em></h3>
+            <p>
+              I&apos;m Karthikeyan K, a Vibe Coder who loves building modern digital products.
+              I turn ideas into real-world websites, applications and AI-powered solutions with
+              a focus on clean design, performance and user experience.
+            </p>
+            <Link href="#contact" className="shot-know">Know More <ArrowRight /></Link>
           </div>
-        </div>
-      </section>
 
-      <section className="ref-work" id="work">
-        <div className="ref-shell">
-          <div className="ref-work-head">
-            <h2><span className="ref-metal-inline">SELECTED</span> <em>work</em></h2>
-            <p>Selected real-time builds across business websites, creative portfolios, automation and digital products.</p>
+          <div className="shot-about-photo">
+            <div className="shot-photo-card">
+              <img src="/karthikeyan-editorial.webp" alt="Karthikeyan K portrait" />
+            </div>
+            <div className="shot-script">Build.<br />Create.<br />Grow.</div>
+            <div className="shot-circle-copy">KARTHIKEYAN K • VIBE CODER • DEVELOPER •</div>
           </div>
-          <div className="ref-projects">
-            {projects.map((project, index) => (
-              <article key={project.no} className={"ref-project " + (index % 2 ? "is-reverse" : "")}>
-                <div className={"ref-project-visual " + project.tone}>
-                  <span>{project.kind}</span><strong>{project.title}</strong>
-                </div>
-                <div className="ref-project-copy">
-                  <span className="ref-project-no">{project.no}</span>
-                  <h3>{project.title}</h3>
-                  <p>A polished digital experience focused on simple navigation, clear communication, responsive behavior and a premium visual finish.</p>
-                  <div className="ref-project-actions">
-                    <Link href={project.href} className="ref-live-btn">Live Demo <ArrowUpRight className="h-3 w-3" /></Link>
-                    <a href="https://github.com/Karthi7170" target="_blank" rel="noreferrer" className="ref-github-btn">GitHub <Github className="h-3 w-3" /></a>
+
+          <div className="shot-services" id="services">
+            <div className="shot-section-label"><i /> MY SERVICES</div>
+            <div className="shot-service-stack">
+              {services.map((service) => {
+                const Icon = service.icon
+                return (
+                  <div className="shot-service-row" key={service.title}>
+                    <div className="shot-service-icon"><Icon /></div>
+                    <div><strong>{service.title}</strong><span>{service.text}</span></div>
+                    <ArrowRight className="shot-row-arrow" />
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="ref-contact" id="contact">
-        <div className="ref-shell">
-          <div className="ref-contact-grid">
-            <div className="ref-contact-details">
-              <span className="ref-small-label">GET IN TOUCH</span>
-              <a className="ref-big-email" href="mailto:karthifreelancer7170@gmail.com">karthifreelancer7170@gmail.com</a>
-              <p>Available for freelance projects, collaborations and modern digital product builds.</p>
-              <div className="ref-socials">
-                <a href="https://github.com/Karthi7170" target="_blank" rel="noreferrer" aria-label="GitHub"><Github /></a>
-                <a href="https://www.linkedin.com/in/karthikeyan-k-950311208" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram /></a>
-                <a href="mailto:karthifreelancer7170@gmail.com" aria-label="Email"><Mail /></a>
-              </div>
+                )
+              })}
             </div>
-            <form className="ref-contact-form" action="mailto:karthifreelancer7170@gmail.com" method="post" encType="text/plain">
-              <input name="name" placeholder="Your name" />
-              <input name="email" type="email" placeholder="Your email" />
-              <textarea name="message" rows={5} placeholder="Write something..." />
-              <button type="submit">Send Message</button>
-            </form>
           </div>
 
-          <div className="ref-footer-row">
-            <div><span>Connect with me</span><a href="mailto:karthifreelancer7170@gmail.com">karthifreelancer7170@gmail.com</a></div>
-            <div className="ref-footer-cta"><strong>Let&apos;s build something</strong><p>Open for freelance opportunities and collaborations.</p><a href="mailto:karthifreelancer7170@gmail.com">Get in touch</a></div>
+          <div className="shot-work" id="work">
+            <div className="shot-section-label"><i /> SELECTED WORK</div>
+            <div className="shot-work-track">
+              {works.map((work) => (
+                <a key={work.title} href={work.href} target="_blank" rel="noreferrer" className={"shot-work-card " + work.cls}>
+                  <span className="shot-card-tag">{work.tag}</span>
+                  <div className="shot-card-fill" />
+                  <div className="shot-card-copy">
+                    <strong>{work.title}</strong>
+                    <span>{work.subtitle}</span>
+                  </div>
+                  <div className="shot-card-go">↗</div>
+                </a>
+              ))}
+            </div>
+            <Link href="/projects" className="shot-view-all">View All Projects <ArrowRight /></Link>
           </div>
-          <div className="ref-footer-links"><Link href="#home">Home</Link><Link href="#about">About</Link><Link href="#services">Services</Link><Link href="#work">Projects</Link></div>
         </div>
       </section>
+
+      <footer className="shot-footer" id="contact">
+        <div className="shot-footer-inner">
+          <div className="shot-brand">Karthikeyan K<span>.</span></div>
+          <div className="shot-footer-copy">LET&apos;S BUILD SOMETHING AMAZING TOGETHER.</div>
+          <div className="shot-socials">
+            <a href="https://github.com/Karthi7170" target="_blank" rel="noreferrer" aria-label="GitHub"><Github /></a>
+            <a href="https://www.linkedin.com/in/karthikeyan-k-950311208" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram /></a>
+            <a href="mailto:karthifreelancer7170@gmail.com" aria-label="Email"><Mail /></a>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
