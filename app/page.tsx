@@ -101,7 +101,7 @@ export default function Home() {
             <div className="absolute inset-x-[8%] bottom-0 top-[4%] rounded-[2rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.025] to-transparent" />
             <div className="hero-photo-mask absolute inset-0">
               <img
-                src="/karthikeyan-hero.webp"
+                src="/karthikeyan-hero-v2.webp"
                 alt="Karthikeyan K"
                 loading="eager"
                 decoding="async"
