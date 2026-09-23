@@ -1,197 +1,158 @@
 import Link from "next/link"
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Bot,
-  CheckCircle2,
-  Code2,
-  Github,
-  Layers3,
-  Linkedin,
-  Mail,
-  Rocket,
-  Smartphone,
-  Sparkles,
-} from "lucide-react"
+import { ArrowRight, ArrowUpRight, Code2, Cpu, Github, Layers3, Mail, Smartphone } from "lucide-react"
 
 const services = [
   {
+    number: "01",
+    title: "FULL STACK DEVELOPMENT",
     icon: Code2,
-    title: "Web Development",
-    text: "Premium websites and web apps that are fast, responsive, easy to use, and ready to launch.",
+    text: "Responsive, production-ready websites and web apps built with modern frameworks, clean UX, and launch-focused engineering.",
   },
   {
-    icon: Smartphone,
-    title: "App Development",
-    text: "Clean mobile-first app experiences, practical prototypes, and product interfaces built around real user needs.",
-  },
-  {
-    icon: Bot,
-    title: "AI & Automation",
-    text: "AI integrations, assistants, smart workflows, automations, and tools that reduce repetitive work.",
-  },
-  {
+    number: "02",
+    title: "FRONTEND DEVELOPMENT",
     icon: Layers3,
-    title: "Product & UI Build",
-    text: "From rough idea to polished interface — structure, UX, implementation, testing, and deployment in one workflow.",
+    text: "Premium interfaces with strong visual hierarchy, animation, mobile responsiveness, accessibility, and fast interactions.",
+  },
+  {
+    number: "03",
+    title: "APP DEVELOPMENT",
+    icon: Smartphone,
+    text: "Mobile-first product experiences, prototypes, dashboards, and practical app interfaces designed around real user flows.",
+  },
+  {
+    number: "04",
+    title: "AI & AUTOMATION",
+    icon: Cpu,
+    text: "AI-assisted workflows, integrations, smart tools, and automations that reduce repetitive work and improve digital products.",
   },
 ]
 
 const projects = [
   {
     number: "01",
-    title: "Sugumar Portfolio",
-    type: "Creative Portfolio",
-    description:
-      "A cinematic portfolio for a video editor, built around motion, video-first storytelling, and a premium viewing experience.",
-    stack: ["Next.js", "GSAP", "Video UX"],
-    href: "https://sugumar-portfolio-beta.vercel.app",
-  },
-  {
-    number: "02",
-    title: "New Royal Tiles",
-    type: "Business Website",
-    description:
-      "A customer-focused digital showroom with branch discovery, tile visualisation, calculators, WhatsApp enquiry flows, and mobile-first UX.",
-    stack: ["Next.js", "Visualizer", "Local SEO"],
+    title: "NEW ROYAL TILES",
+    tag: "BUSINESS WEBSITE",
+    description: "A premium digital showroom experience with branch discovery, tile visualisation, enquiries, and responsive product presentation.",
     href: "https://royaltiles.vercel.app",
   },
   {
+    number: "02",
+    title: "SUGUMAR PORTFOLIO",
+    tag: "CREATIVE PORTFOLIO",
+    description: "A cinematic portfolio built for a video editor with motion-first storytelling, project showcases, and a premium visual identity.",
+    href: "https://sugumar-portfolio-beta.vercel.app",
+  },
+  {
     number: "03",
-    title: "VIP-Hunter",
-    type: "Automation Product",
-    description:
-      "A job discovery system that scans public employer feeds, filters relevant roles, scores matches, and simplifies the daily search process.",
-    stack: ["Next.js", "Automation", "Supabase"],
+    title: "VIP-HUNTER",
+    tag: "AUTOMATION PRODUCT",
+    description: "A focused job-discovery product that helps organise role searches, matching, and application workflows in one experience.",
     href: "https://vip-hunter.vercel.app",
   },
 ]
 
-const process = [
-  ["01", "Understand", "We define the goal, user, and the exact problem the product should solve."],
-  ["02", "Design", "I shape the structure, visual direction, user flow, and the first working experience."],
-  ["03", "Build", "AI-assisted development speeds up implementation while the product logic stays intentional."],
-  ["04", "Ship", "I test the experience, connect the required services, deploy it, and refine what matters."],
-]
-
 export default function Home() {
   return (
-    <div className="overflow-hidden bg-[#050505] text-white">
-      <section className="relative isolate border-b border-white/10">
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_30%,rgba(35,255,200,0.07),transparent_30%),linear-gradient(to_bottom,#080808,#050505)]" />
-        <div className="pointer-events-none absolute inset-0 -z-10 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] [background-size:46px_46px]" />
+    <div className="bg-[#050505] text-white">
+      <section className="hero-stage relative isolate overflow-hidden border-b border-white/10">
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_35%,rgba(199,255,0,0.10),transparent_23%),linear-gradient(to_bottom,#050505_0%,#070707_70%,#050505_100%)]" />
+        <div className="grid-noise absolute inset-0 -z-10 opacity-45" />
 
-        <div className="mx-auto grid min-h-[calc(100vh-72px)] max-w-[1440px] items-center gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[1.05fr_0.95fr_0.9fr] lg:gap-5 lg:px-10 lg:py-6 xl:px-16">
-          <div className="relative z-10 pt-5 lg:pt-0">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/[0.06] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-              Available for digital builds
-            </div>
-            <h1 className="max-w-[610px] text-[clamp(4rem,8.3vw,8.7rem)] font-black leading-[0.78] tracking-[-0.075em]">
-              <span className="block">Build</span>
-              <span className="outline-text block">Digital</span>
-              <span className="block">Futures</span>
-            </h1>
-            <p className="mt-7 max-w-md text-sm leading-7 text-white/50 sm:text-base">
-              I help ideas become clear, useful digital products — from the first screen to the final deployment.
-            </p>
+        <div className="mx-auto flex min-h-[calc(100vh-72px)] max-w-[1500px] flex-col px-5 pb-7 pt-8 sm:px-8 lg:px-14">
+          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.24em] text-white/45">
+            <span>Karthikeyan K</span>
+            <span className="hidden sm:block">Vibe Coder · Developer · AI Builder</span>
+            <span>Chennai / India</span>
           </div>
 
-          <div className="relative order-first mx-auto h-[460px] w-full max-w-[430px] lg:order-none lg:h-[680px] lg:max-w-none">
-            <div className="absolute inset-x-[8%] bottom-0 top-[4%] rounded-[2rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.025] to-transparent" />
-            <div className="absolute inset-x-[8%] bottom-0 top-[4%] overflow-hidden rounded-[2rem]">
+          <div className="relative flex flex-1 items-center justify-center py-8">
+            <div className="pointer-events-none absolute inset-x-0 top-[13%] z-0 text-center">
+              <h1 className="hero-title select-none text-[clamp(5.2rem,15vw,14rem)] font-black uppercase leading-[0.72] tracking-[-0.08em]">
+                PORTFOLIO
+              </h1>
+              <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.42em] text-white/35">
+                Ideas to interface. Interface to product.
+              </p>
+            </div>
+
+            <div className="hero-portrait relative z-10 h-[560px] w-[min(84vw,520px)] sm:h-[650px] lg:h-[720px]">
               <img
-                src="/karthikeyan-profile-fixed.webp"
+                src="/karthikeyan-night.webp"
                 alt="Karthikeyan K"
-                loading="eager"
-                decoding="async"
-                className="h-full w-full object-cover object-[50%_22%]"
+                className="h-full w-full object-cover object-[50%_24%]"
               />
             </div>
-            <div className="absolute bottom-5 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-white/10 bg-black/65 px-5 py-4 backdrop-blur-xl">
-              <div className="flex items-center gap-2 text-sm font-semibold">
-                <span className="h-2 w-2 rounded-full bg-emerald-300" />
-                Karthikeyan K
-              </div>
-              <div className="mt-1 text-xs uppercase tracking-[0.18em] text-white/40">Vibe Coder · Digital Builder</div>
+
+            <div className="absolute bottom-[8%] left-0 z-20 hidden max-w-[260px] lg:block">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#c8ff00]">Digital builder</p>
+              <p className="mt-3 text-sm leading-6 text-white/50">
+                I build websites, app experiences, AI workflows, and digital products with a strong focus on clarity and usability.
+              </p>
+            </div>
+
+            <div className="absolute bottom-[8%] right-0 z-20 hidden text-right lg:block">
+              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/35">Available for projects</p>
+              <Link href="/#contact" className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#c8ff00]">
+                Let&apos;s build something <ArrowUpRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
 
-          <div className="relative z-10 pb-4 lg:pb-0">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Think. Build. Ship.</p>
-            <h2 className="max-w-md text-3xl font-black leading-[1.02] tracking-[-0.045em] sm:text-4xl xl:text-5xl">
-              Web. Apps. AI. Built around your idea.
-            </h2>
-            <p className="mt-5 max-w-md text-sm leading-7 text-white/55 sm:text-base">
-              I&apos;m <strong className="font-semibold text-white">Karthikeyan K</strong>, a vibe coder and developer.
-              I build modern websites, app experiences, AI integrations, automations, and digital products with a clear,
-              user-friendly approach.
-            </p>
-
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link
-                href="/#contact"
-                className="inline-flex h-11 items-center justify-center rounded-full bg-emerald-300 px-5 text-sm font-bold text-black transition-transform hover:-translate-y-0.5"
-              >
-                Start a Project <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-              <Link
-                href="/#portfolio"
-                className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 px-5 text-sm font-semibold text-white transition-colors hover:border-emerald-300/50 hover:text-emerald-300"
-              >
-                View Work
-              </Link>
+          <div className="flex flex-col gap-4 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/35">
+              <span>Web</span>
+              <span>Apps</span>
+              <span>AI</span>
+              <span>Automation</span>
+              <span>Product UX</span>
             </div>
-
-            <div className="mt-8 flex flex-wrap items-center gap-5 text-xs text-white/45">
-              <a href="https://github.com/Karthi7170" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white">
-                <Github className="h-4 w-4 text-emerald-300" /> GitHub
-              </a>
-              <a href="https://www.linkedin.com/in/karthikeyan-k-950311208" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white">
-                <Linkedin className="h-4 w-4 text-emerald-300" /> LinkedIn
-              </a>
-              <a href="mailto:karthifreelancer7170@gmail.com" className="flex items-center gap-2 hover:text-white">
-                <Mail className="h-4 w-4 text-emerald-300" /> Email
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-white/10 bg-white/[0.015]">
-          <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-x-8 gap-y-3 px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/35 sm:justify-between sm:px-8 lg:px-16">
-            <span>Web Development</span>
-            <span className="hidden h-1 w-1 rounded-full bg-emerald-300 sm:block" />
-            <span>App Development</span>
-            <span className="hidden h-1 w-1 rounded-full bg-emerald-300 sm:block" />
-            <span>AI & Automation</span>
-            <span className="hidden h-1 w-1 rounded-full bg-emerald-300 sm:block" />
-            <span>Product Experience</span>
+            <Link href="/#work" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-[#c8ff00]">
+              Explore selected work <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-[1240px] scroll-mt-24 px-5 py-20 sm:px-8 lg:py-28">
-        <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
-          <div>
-            <p className="section-kicker">About me</p>
-            <h2 className="mt-5 text-4xl font-black leading-[0.98] tracking-[-0.05em] sm:text-5xl lg:text-6xl">
-              I make technology feel simpler.
-            </h2>
+      <section id="about" className="border-b border-white/10 bg-[#070707]">
+        <div className="mx-auto grid max-w-[1320px] gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-12 lg:py-32">
+          <div className="relative min-h-[620px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0b0b]">
+            <img
+              src="/karthikeyan-editorial.webp"
+              alt="Karthikeyan K portrait"
+              className="h-full min-h-[620px] w-full object-cover object-center grayscale-[0.12]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-7 sm:p-9">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#c8ff00]">Profile / 2026</p>
+              <p className="mt-2 max-w-md text-sm leading-6 text-white/55">
+                Technology should feel simple to the user, even when the work behind it is complex.
+              </p>
+            </div>
           </div>
-          <div className="max-w-3xl">
-            <p className="text-xl leading-9 text-white/75 sm:text-2xl sm:leading-10">
-              I&apos;m Karthikeyan K. I use AI-assisted development, modern web technologies, and practical product
-              thinking to turn rough ideas into polished digital experiences.
+
+          <div className="flex flex-col justify-center">
+            <p className="section-label">Intro</p>
+            <h2 className="mt-6 text-5xl font-black uppercase leading-[0.9] tracking-[-0.055em] sm:text-7xl">
+              I build digital
+              <span className="block text-[#c8ff00]">experiences.</span>
+            </h2>
+            <p className="mt-8 max-w-2xl text-base leading-8 text-white/55 sm:text-lg">
+              I&apos;m Karthikeyan K — a vibe coder and developer who uses AI-assisted development, modern web technology,
+              and product thinking to turn ideas into clean, useful, launch-ready experiences.
             </p>
-            <p className="mt-6 max-w-2xl text-sm leading-7 text-white/45 sm:text-base">
-              My focus is not adding technology just because it looks impressive. The product should be easy to
-              understand, responsive on every device, useful to the people using it, and straightforward to maintain.
-            </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              {["Clear communication", "Mobile-first thinking", "Launch-ready delivery"].map((item) => (
-                <div key={item} className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-xs font-medium text-white/60">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-300" />
-                  {item}
+
+            <div className="mt-10 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2">
+              {[
+                ["01", "Modern websites", "Responsive, fast and built for real users."],
+                ["02", "App experiences", "Clear mobile-first flows and interfaces."],
+                ["03", "AI workflows", "Useful integrations and smart automation."],
+                ["04", "Product delivery", "From rough brief to deployed version."],
+              ].map(([n, title, text]) => (
+                <div key={n} className="bg-[#080808] p-6">
+                  <span className="text-[10px] font-black text-[#c8ff00]">{n}</span>
+                  <h3 className="mt-6 text-lg font-bold uppercase">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/40">{text}</p>
                 </div>
               ))}
             </div>
@@ -199,132 +160,100 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="scroll-mt-24 border-y border-white/10 bg-[#080808]">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:py-28">
-          <div className="mb-12 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <section id="services" className="border-b border-white/10">
+        <div className="mx-auto max-w-[1320px] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+          <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="section-kicker">What I can help with</p>
-              <h2 className="mt-5 max-w-3xl text-4xl font-black tracking-[-0.05em] sm:text-5xl">
-                One partner for the digital side of your idea.
-              </h2>
+              <p className="section-label">Capabilities</p>
+              <h2 className="mt-5 text-4xl font-black uppercase tracking-[-0.045em] sm:text-6xl">What I build</h2>
             </div>
             <p className="max-w-md text-sm leading-7 text-white/45">
-              Need a website, an app experience, an AI workflow, or help shaping the full product? I can take it from
-              concept to a working first version.
+              A focused set of digital capabilities inspired by the reference portfolio — simplified, sharper, and adapted to my own work.
             </p>
           </div>
 
-          <div className="grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-2">
-            {services.map((service) => {
+          <div className="border-t border-white/10">
+            {services.map((service, index) => {
               const Icon = service.icon
               return (
-                <article key={service.title} className="group bg-[#090909] p-7 transition-colors hover:bg-[#0d0d0d] sm:p-9">
-                  <div className="flex items-start justify-between gap-6">
-                    <div className="grid h-11 w-11 place-items-center rounded-full border border-emerald-300/25 text-emerald-300">
-                      <Icon className="h-5 w-5" />
+                <details key={service.title} className="service-row group border-b border-white/10" open={index === 0}>
+                  <summary className="flex cursor-pointer list-none items-center gap-5 py-6 sm:gap-8 sm:py-8">
+                    <span className="w-8 text-[10px] font-black text-white/30">{service.number}</span>
+                    <div className="grid h-10 w-10 place-items-center border border-white/10 text-white/45 group-open:border-[#c8ff00]/50 group-open:text-[#c8ff00]">
+                      <Icon className="h-4 w-4" />
                     </div>
-                    <ArrowUpRight className="h-5 w-5 text-white/20 transition-colors group-hover:text-emerald-300" />
+                    <h3 className="flex-1 text-lg font-black uppercase tracking-[-0.02em] sm:text-2xl">{service.title}</h3>
+                    <span className="service-plus text-2xl font-light text-[#c8ff00]">+</span>
+                  </summary>
+                  <div className="pb-8 pl-[4.6rem] pr-6 sm:pl-[7rem]">
+                    <p className="max-w-2xl text-sm leading-7 text-white/45">{service.text}</p>
                   </div>
-                  <h3 className="mt-10 text-2xl font-bold tracking-[-0.03em]">{service.title}</h3>
-                  <p className="mt-4 max-w-md text-sm leading-7 text-white/45">{service.text}</p>
-                </article>
+                </details>
               )
             })}
           </div>
         </div>
       </section>
 
-      <section id="portfolio" className="mx-auto max-w-[1240px] scroll-mt-24 px-5 py-20 sm:px-8 lg:py-28">
-        <div className="mb-12">
-          <p className="section-kicker">Selected work</p>
-          <div className="mt-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-            <h2 className="max-w-3xl text-4xl font-black tracking-[-0.05em] sm:text-5xl">Real builds. Live products.</h2>
-            <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-300">
-              View project details <ArrowRight className="h-4 w-4" />
+      <section id="work" className="border-b border-white/10 bg-[#070707]">
+        <div className="mx-auto max-w-[1320px] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+          <div className="mb-14 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="section-label">Selected work</p>
+              <h2 className="mt-5 text-4xl font-black uppercase tracking-[-0.045em] sm:text-6xl">Live builds</h2>
+            </div>
+            <Link href="/projects" className="text-xs font-black uppercase tracking-[0.16em] text-[#c8ff00]">
+              View all projects
             </Link>
           </div>
-        </div>
 
-        <div className="space-y-4">
-          {projects.map((project) => (
-            <article key={project.title} className="premium-project group">
-              <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[0.18fr_0.85fr_1.2fr_0.5fr] lg:items-center lg:p-10">
-                <span className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-300">{project.number}</span>
+          <div className="space-y-3">
+            {projects.map((project) => (
+              <a
+                key={project.title}
+                href={project.href}
+                target="_blank"
+                rel="noreferrer"
+                className="project-strip group grid gap-5 border border-white/10 bg-[#090909] p-6 transition-all hover:border-[#c8ff00]/45 sm:p-8 lg:grid-cols-[0.12fr_0.7fr_1.25fr_0.25fr] lg:items-center"
+              >
+                <span className="text-[10px] font-black text-[#c8ff00]">{project.number}</span>
                 <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/35">{project.type}</p>
-                  <h3 className="mt-2 text-2xl font-black tracking-[-0.035em] sm:text-3xl">{project.title}</h3>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-white/30">{project.tag}</p>
+                  <h3 className="mt-2 text-xl font-black uppercase sm:text-2xl">{project.title}</h3>
                 </div>
-                <div>
-                  <p className="max-w-xl text-sm leading-7 text-white/48">{project.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.stack.map((item) => (
-                      <span key={item} className="rounded-full border border-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-white/35">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <p className="max-w-2xl text-sm leading-7 text-white/42">{project.description}</p>
                 <div className="lg:text-right">
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 px-5 text-sm font-semibold transition-colors hover:border-emerald-300/50 hover:text-emerald-300"
-                  >
-                    View Live <ArrowUpRight className="ml-2 h-4 w-4" />
-                  </a>
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 transition-all group-hover:border-[#c8ff00] group-hover:bg-[#c8ff00] group-hover:text-black">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-[#080808]">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:py-28">
-          <div className="mb-12 grid gap-6 lg:grid-cols-2">
-            <div>
-              <p className="section-kicker">How I work</p>
-              <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] sm:text-5xl">Simple process. Clear progress.</h2>
-            </div>
-            <p className="max-w-xl self-end text-sm leading-7 text-white/45">
-              You do not need a perfect technical brief. Start with the problem or idea — I&apos;ll help turn it into a
-              clear, buildable plan.
-            </p>
-          </div>
-
-          <div className="grid gap-4 lg:grid-cols-4">
-            {process.map(([number, title, text]) => (
-              <div key={number} className="rounded-2xl border border-white/10 bg-black p-6">
-                <span className="font-mono text-xs font-bold text-emerald-300">{number}</span>
-                <h3 className="mt-8 text-xl font-bold">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-white/42">{text}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="scroll-mt-24">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:py-28">
-          <div className="relative overflow-hidden rounded-[2rem] border border-emerald-300/20 bg-[radial-gradient(circle_at_85%_20%,rgba(46,255,203,0.14),transparent_28%),#090909] p-7 sm:p-10 lg:p-14">
-            <Sparkles className="absolute right-8 top-8 h-6 w-6 text-emerald-300/60" />
-            <p className="section-kicker">Have an idea?</p>
-            <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.5fr] lg:items-end">
-              <div>
-                <h2 className="max-w-4xl text-4xl font-black leading-[0.98] tracking-[-0.055em] sm:text-6xl">
-                  Let&apos;s turn it into something people can use.
-                </h2>
-                <p className="mt-5 max-w-xl text-sm leading-7 text-white/48 sm:text-base">
-                  Website, app, AI workflow, automation, or a product idea — send me the requirement and we can shape the
-                  right solution.
-                </p>
-              </div>
-              <div className="lg:text-right">
-                <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-full bg-emerald-300 px-6 text-sm font-bold text-black">
-                  Start a Project <Rocket className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
+      <section id="contact" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(199,255,0,0.10),transparent_25%)]" />
+        <div className="relative mx-auto grid max-w-[1320px] gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[1.2fr_0.8fr] lg:px-12 lg:py-32">
+          <div>
+            <p className="section-label">Get in touch</p>
+            <h2 className="mt-5 max-w-4xl text-5xl font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-8xl">
+              Have an idea?
+              <span className="block text-[#c8ff00]">Let&apos;s build it.</span>
+            </h2>
+          </div>
+          <div className="flex flex-col justify-end">
+            <p className="max-w-md text-sm leading-7 text-white/50">
+              Website, app, portfolio, AI workflow, automation, or something experimental — send the requirement and I&apos;ll help shape the build.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="mailto:karthifreelancer7170@gmail.com" className="accent-button">
+                <Mail className="h-4 w-4" /> Email me
+              </a>
+              <a href="https://github.com/Karthi7170" target="_blank" rel="noreferrer" className="outline-button">
+                <Github className="h-4 w-4" /> GitHub
+              </a>
             </div>
           </div>
         </div>
