@@ -99,9 +99,9 @@ export default function Home() {
 
           <div className="relative order-first mx-auto h-[460px] w-full max-w-[430px] lg:order-none lg:h-[680px] lg:max-w-none">
             <div className="absolute inset-x-[8%] bottom-0 top-[4%] rounded-[2rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.025] to-transparent" />
-            <div className="hero-photo-mask absolute inset-0">
+            <div className="absolute inset-x-[8%] bottom-0 top-[4%] overflow-hidden rounded-[2rem]">
               <img
-                src="/karthikeyan-profile-2026.webp"
+                src="/karthikeyan-profile-final.webp"
                 alt="Karthikeyan K"
                 loading="eager"
                 decoding="async"
